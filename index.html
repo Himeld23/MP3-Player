@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mp3 Player</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/44a29f837f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="screen">
+        <input type="checkbox" name="check" id="magicButton" value="None">
+        <label for="magicButton" class="main"></label>
+
+        <div class="coverImage"></div>
+        <div class="search"></div>
+        <div class="bodyPlayer"></div>
+
+        <table class="list">
+            <tr class="song">
+                <td class="nr"><h5>1</h5></td>
+                <td class="title"><h6 style="color: #ff564c;">Demons</h6></td>
+                <td class="length"><h5>3:12</h5></td>
+                <td><input type="checkbox"  id="heart"><label for="heart" class="icons"></label></td>
+            </tr>
+            
+
+            <tr class="song">
+                <td class="nr"><h5>2</h5></td>
+                <td class="title"><h6>Attention</h6></td>
+                <td class="length"><h5>3:42</h5></td>
+                <td><input type="checkbox"  id="heart1" checked><label for="heart1" class="icons"></label></td>
+            </tr>
+
+
+            <tr class="song">
+                <td class="nr"><h5>3</h5></td>
+                <td class="title"><h6>Local train</h6></td>
+                <td class="length"><h5>3:22</h5></td>
+                <td><input type="checkbox"  id="heart2"><label for="heart2" class="icons"></label></td>
+            </tr>
+
+
+            <tr class="song">
+                <td class="nr"><h5>4</h5></td>
+                <td class="title"><h6>My King</h6></td>
+                <td class="length"><h5>3:50</h5></td>
+                <td><input type="checkbox"  id="heart3"><label for="heart3" class="icons"></label></td>
+            </tr>
+
+
+            <tr class="song">
+                <td class="nr"><h5>5</h5></td>
+                <td class="title"><h6>New Love</h6></td>
+                <td class="length"><h5>3:18</h5></td>
+                <td><input type="checkbox"  id="heart4" checked><label for="heart4" class="icons"></label></td>
+            </tr>
+
+
+            <tr class="song">
+                <td class="nr"><h5>6</h5></td>
+                <td class="title"><h6>Bad Guy</h6></td>
+                <td class="length"><h5>2:42</h5></td>
+                <td><input type="checkbox"  id="heart5"><label for="heart5" class="icons"></label></td>
+            </tr>
+
+
+        </table>
+
+        <div class="shadow"></div>
+
+        <div class="info">
+            <h4>Demons - NIVIRO</h4>
+        </div>
+
+        <audio preload id="audio" controls>
+            <source src="NIVIRO - Demons [NCS Release].mp3">
+        </audio>
+
+        <table class="player">
+            <td><input type="checkbox"  id="backward" ><label for="backward" class="backward"></label></td>
+            <td><input type="checkbox"  id="play" title="Play" onclick="togglePlayPause()"><label for="play" class="play"></label></td>
+            <td><input type="checkbox"  id="forward"><label for="forward" class="forward"></label></td>
+        </table>
+
+        <table class="footer">
+            <td><input type="checkbox"  id="love" checked ><label for="love" class="love"></label></td>
+            <td><input type="checkbox"  id="repeat"  ><label for="repeat" class="repeat"></label></td>
+            <td><input type="checkbox"  id="shuffle" ><label for="shuffle" class="shuffle"></label></td>
+            <td><input type="checkbox"  id="options"  ><label for= "options" class="options"></label></td>
+        </table>
+
+        <div class="current"><h2>Demons</h2></div>
+    </section>
+    <script>
+        var audio = document.getElementById('audio');
+        var playpause = document.getElementById("play");
+
+        function togglePlayPause() {
+            if(audio.paused || audio.ended) {
+                playpause.title = "Pause";
+                audio.play();
+            } else {
+                playpause.title = "Play";
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>
